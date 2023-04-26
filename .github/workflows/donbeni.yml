@@ -1,0 +1,18 @@
+nom : PHP CodeSniffer
+sur : [appuyer]
+emplois :
+  phpcs :
+     nom : renifleur de code PHP
+     fonctionne sur : ubuntu-latest
+     étapes :
+        - usages : actions/checkout@v2
+        - nom : Installer PHP
+          utilise : shivammathur/setup-php@v2
+          avec :
+            version php : 7.4
+            extensions : mbstring
+
+        - name : Installer les dépendances de Composer
+          run : composer install --prefer-dist --no-interaction
+        - nom : Exécute le renifleur de code PHP
+          exécutez : vendor/bin/phpcs index.php --standard=PSR1,PSR2
